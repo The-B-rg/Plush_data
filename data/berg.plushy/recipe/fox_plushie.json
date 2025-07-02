@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "Plush",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:orange_wool"
+    },
+    {
+      "item": "minecraft:totem_of_undying"
+    },
+    {
+      "item": "minecraft:sweet_berries"
+    }
+  ],
+  "result": {
+    "id": "minecraft:totem_of_undying",
+    "components": {
+      "minecraft:custom_model_data": 837920,
+      "minecraft:item_name": "\"Fox Plush\"",
+      "minecraft:hide_additional_tooltip": {},
+      "minecraft:max_stack_size": 64
+    }
+  }
+}

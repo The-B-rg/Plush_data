@@ -1,0 +1,42 @@
+{
+    "type": "minecraft:advancement_reward",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:totem_of_undying",
+            "weight": 1,
+            "quality": 1,
+            "functions": [
+              {
+                "function": "minecraft:set_custom_model_data",
+                "value": 837926
+              },
+              {
+                "function": "minecraft:set_name",
+                "entity": "this",
+                "name": {
+                  "text": "A Prize",
+                  "type": "text",
+                  "color": "#e01b24",
+                  "bold": true
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "functions": [
+      {
+        "function": "minecraft:set_potion",
+        "id": "minecraft:strong_healing"
+      },
+      {
+        "function": "minecraft:set_potion",
+        "id": "minecraft:long_strength"
+      }
+    ]
+  }

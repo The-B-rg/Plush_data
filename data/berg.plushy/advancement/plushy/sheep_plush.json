@@ -1,0 +1,107 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:totem_of_undying",
+      "components": {
+        "minecraft:enchantment_glint_override": true,
+        "minecraft:custom_model_data": 837917
+      }
+    },
+    "title": "Sheep Plush",
+    "description": "Hold all Sheep Plushies. Feel the Rainbow! Pet the ranbow!",
+    "background": "minecraft:black_wool",
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false
+  },
+  "parent": "berg.plushy:plushy/root",
+  "criteria": {
+    "Triger": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "components": {
+              "minecraft:custom_model_data": 837903
+            }
+          },
+          {
+            "components": {
+              "minecraft:custom_model_data": 837904
+            }
+          },
+          {
+            "components": {
+              "minecraft:custom_model_data": 837905
+            }
+          },
+          {
+            "components": {
+              "minecraft:custom_model_data": 837906
+            }
+          },
+          {
+            "components": {
+              "minecraft:custom_model_data": 837907
+            }
+          },
+          {
+            "components": {
+              "minecraft:custom_model_data": 837908
+            }
+          },
+          {
+            "components": {
+              "minecraft:custom_model_data": 837909
+            }
+          },
+          {
+            "components": {
+              "minecraft:custom_model_data": 837910
+            }
+          },
+          {
+            "components": {
+              "minecraft:custom_model_data": 837911
+            }
+          },
+          {
+            "components": {
+              "minecraft:custom_model_data": 837912
+            }
+          },
+          {
+            "components": {
+              "minecraft:custom_model_data": 837913
+            }
+          },
+          {
+            "components": {
+              "minecraft:custom_model_data": 837914
+            }
+          },
+          {
+            "components": {
+              "minecraft:custom_model_data": 837915
+            }
+          },
+          {
+            "components": {
+              "minecraft:custom_model_data": 837916
+            }
+          },
+          {
+            "components": {
+              "minecraft:custom_model_data": 837917
+            }
+          },
+          {
+            "components": {
+              "minecraft:custom_model_data": 837918
+            }
+          }
+        ]
+      }
+    }
+  }
+}

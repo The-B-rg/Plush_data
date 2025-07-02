@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "Plush",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:pink_wool"
+    },
+    {
+      "item": "minecraft:totem_of_undying"
+    },
+    {
+      "item": "minecraft:porkchop"
+    }
+  ],
+  "result": {
+    "id": "minecraft:totem_of_undying",
+    "components": {
+      "minecraft:custom_model_data": 837923,
+      "minecraft:item_name": "\"Pig Plush\"",
+      "minecraft:hide_additional_tooltip": {},
+      "minecraft:max_stack_size": 64
+    }
+  }
+}

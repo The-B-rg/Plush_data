@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:stonecutting",
+  "group": "player",
+  "ingredient": {
+    "item": "minecraft:totem_of_undying"
+  },
+  "result": {
+    "id": "minecraft:totem_of_undying",
+    "components": {
+      "minecraft:item_name": "\"Spelenberg\"",
+      "minecraft:custom_model_data": 837926
+    }
+  }
+}

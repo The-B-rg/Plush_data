@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "Plush",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:white_wool"
+    },
+    {
+      "item": "minecraft:totem_of_undying"
+    },
+    {
+      "item": "minecraft:feather"
+    }
+  ],
+  "result": {
+    "id": "minecraft:totem_of_undying",
+    "components": {
+      "minecraft:custom_model_data": 837901,
+      "minecraft:item_name": "\"Sheep Plush\"",
+      "minecraft:hide_additional_tooltip": {},
+      "minecraft:max_stack_size": 64
+    }
+  }
+}
