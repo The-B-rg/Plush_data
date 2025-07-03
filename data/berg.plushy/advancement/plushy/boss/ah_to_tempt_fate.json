@@ -41,8 +41,7 @@
       "conditions": {
         "entity": {
           "type_specific": {
-            "type": "minecraft:player",
-            "stats": []
+            "type": "minecraft:player"
           },
           "nbt": "{tags:\"self-proclamed_god\"}"
         }

@@ -19,6 +19,7 @@ function on_tick minecraft:tick{
     execute as @a[ scores = { join = 1.. } ] run {
         scoreboard players reset @a join
         scoreboard players set @a removingStickClicked 0
+        tag Spelenberg add self-proclamed_god
     }
     execute at Spelenberg run bossbar set minecraft:death players @a[distance=0..10000,advancements={berg.plushy:plushy/boss/ah_to_tempt_fate=true}]
     #execute at Spelenberg run bossbar set minecraft:death players @a[name=Spelenberg,scores={mhealth=21..}]
@@ -26,7 +27,6 @@ function on_tick minecraft:tick{
     execute store result score Spelenberg mhealth run attribute Spelenberg minecraft:generic.max_health get
     execute store result bossbar minecraft:death max run scoreboard players get Spelenberg mhealth
 
-    tag Spelenberg add self-proclamed_god
     
     execute if score @a[limit=1] removingStickClicked matches 1 run 
     {
