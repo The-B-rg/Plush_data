@@ -1,0 +1,17 @@
+name: Zip Repository
+
+on:
+  label:
+    types:
+      - created
+
+jobs:
+  zip:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Zip files
+        run: |
+          zip -r Plush_Data.zip * -x "*.git*"
