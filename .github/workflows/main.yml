@@ -1,17 +1,23 @@
-name: Zip Repository
+name: Create and Upload Zip on Release
 
 on:
-  label:
-    types:
-      - created
+  release:
+    types: [published]
 
 jobs:
-  zip:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Zip files
+      - name: Create zip file
         run: |
-          zip -r Plush_Data.zip * -x "*.git*"
+          zip -r Plush_data.zip . -x "*.git*"
+
+      - name: Upload zip file as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Plush_data-zip
+          path: Plush_data.zip
