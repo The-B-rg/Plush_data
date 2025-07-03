@@ -9,15 +9,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Create zip file
-        run: |
-          zip -r Plush_data.zip . -x "*.git*"
-
-      - name: Upload zip file as artifact
-        uses: actions/upload-artifact@v4
+      - name: Create artifact
+        uses: actions/upload-artifact@v2
         with:
-          name: Plush_data-zip
-          path: Plush_data.zip
+          name: source-code
+          path: |
+            **/*
+            !**/.git/**  # Exclude the .git folder
