@@ -51,10 +51,8 @@
       "trigger": "minecraft:player_killed_entity",
       "conditions": {
         "entity": {
-          "type_specific": {
-            "type": "minecraft:player"
-          },
-          "nbt": "{tags:\"self-proclamed_god\"}"
+          "type": "minecraft:player",
+          "nbt": "{Tags:[\"self-proclamed_god\"]}"
         }
       }
     }

@@ -4,11 +4,11 @@
 scoreboard objectives add mcb.internal dummy
 scoreboard objectives add join minecraft.custom:minecraft.leave_game
 scoreboard objectives add removingStickClicked minecraft.used:minecraft.carrot_on_a_stick
-scoreboard objectives add health health "Spelenberg"
-scoreboard objectives add mhealth dummy "Spelenberg"
+data modify storage plush:boss0 mhealth set value 20
+data modify storage plush:boss0 health set value 20
 bossbar add death "Test"
 bossbar set minecraft:death visible false
 bossbar set minecraft:death style notched_20
 bossbar set minecraft:death visible true
 bossbar set death color red
-tellraw @p {"text":"Plushy recipes loaded. Have fun!"}
+tellraw @a {"text":"Plushy recipes loaded. Have fun!"}

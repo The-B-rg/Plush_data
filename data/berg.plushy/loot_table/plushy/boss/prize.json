@@ -1,42 +1,53 @@
 {
-    "type": "minecraft:advancement_reward",
-    "pools": [
-      {
-        "rolls": 1,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "name": "minecraft:totem_of_undying",
-            "weight": 1,
-            "quality": 1,
-            "functions": [
-              {
-                "function": "minecraft:set_custom_model_data",
-                "value": 837926
-              },
-              {
-                "function": "minecraft:set_name",
-                "entity": "this",
-                "name": {
-                  "text": "A Prize",
-                  "type": "text",
-                  "color": "#e01b24",
-                  "bold": true
-                }
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "functions": [
-      {
-        "function": "minecraft:set_potion",
-        "id": "minecraft:strong_healing"
+  "type": "minecraft:advancement_reward",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:constant",
+        "value": 1
       },
-      {
-        "function": "minecraft:set_potion",
-        "id": "minecraft:long_strength"
-      }
-    ]
-  }
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:totem_of_undying",
+          "weight": 1,
+          "quality": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_lore",
+              "entity": "this",
+              "lore": [
+                {
+                  "text": "He breathed his last monolog... well, untill he respawns."
+                }
+              ],
+              "mode": "append"
+            },
+            {
+              "function": "minecraft:set_custom_model_data",
+              "value": 837926
+            },
+            {
+              "function": "minecraft:set_name",
+              "entity": "this",
+              "name": {
+                "text": "A Prize",
+                "type": "text",
+                "color": "#e01b24",
+                "bold": true
+              },
+              "target": "item_name"
+            }
+          ]
+        }
+      ],
+      "functions": [],
+      "conditions": [
+        {
+          "condition": "minecraft:killed_by_player"
+        }
+      ]
+    }
+  ],
+  "functions": []
+}
