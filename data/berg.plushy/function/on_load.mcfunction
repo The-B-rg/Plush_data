@@ -3,7 +3,6 @@
 # you can use MC-Build without its internal scoreboard but this will limit the available features
 scoreboard objectives add mcb.internal dummy
 scoreboard objectives add join minecraft.custom:minecraft.leave_game
-scoreboard objectives add removingStickClicked minecraft.used:minecraft.carrot_on_a_stick
 data modify storage plush:boss0 mhealth set value 20
 data modify storage plush:boss0 health set value 20
 bossbar add death "Test"

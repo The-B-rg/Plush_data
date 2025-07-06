@@ -2,7 +2,6 @@ function on_load minecraft:load{
     # you can use MC-Build without its internal scoreboard but this will limit the available features
     scoreboard objectives add mcb.internal dummy
     scoreboard objectives add join minecraft.custom:minecraft.leave_game
-    scoreboard objectives add removingStickClicked minecraft.used:minecraft.carrot_on_a_stick
 
     data modify storage plush:boss0 mhealth set value 20
     data modify storage plush:boss0 health set value 20
@@ -21,14 +20,6 @@ function on_tick minecraft:tick{
         scoreboard players set @a removingStickClicked 0
         tellraw @a {translate:"@s",extra:[" added to the join list"]}
         tag Spelenberg add self-proclamed_god
-    }
-
-    
-    
-    execute if score @a[limit=1] removingStickClicked matches 1 run 
-    {
-        scoreboard players set @a removingStickClicked 0
-        execute at @p run kill @e[type=minecraft:block_display,distance=..2]
     }
 
     execute at Spelenberg if entity @a[distance=0..10000,advancements={berg.plushy:plushy/boss/ah_to_tempt_fate=true}] run{
@@ -53,31 +44,45 @@ function debug/blockdisplaybook{
 # give @p written_book[written_book_content={title:"Text Display ToolKit",author:"Ari's Tech Channel",generation:0,resolved:true,pages:['[{"text":"Creating Text DisplaysUse the /summon command with text displays and the nbt data should be:"},{"text":"{"text":\"HelloWorld\"}","color":"dark_green","italic":true,"underlined":true,"hoverEvent":{"action":"show_text","value":[{"text":"{"text":\"Hello World\"}"}]},"clickEvent":{"action":"copy_to_clipboard","value":"{"text":\"Hello World\"}"}},{"text":"Note: You can't use spaces with this method. (Page 3 for the other method)Cont ->"}]','[{"text":"Example:/"},{"text":"summon minecraft:text_display ~ ~ ~ {text:\"HelloWorld\"}","color":"dark_green","italic":true,"underlined":true,"hoverEvent":{"action":"show_text","value":[{"text":"/summon minecraft:text_display ~ ~ ~ {text:\"HelloWorld\"}"}]},"clickEvent":{"action":"copy_to_clipboard","value":"/summon minecraft:text_display ~ ~ ~ {text:\"HelloWorld\"}"}}]','[{"text":"The other method allows for spaces, color and lots of other options."},{"text":"{text:'{text:\"Hello world\",color:\"blue\"}'}","color":"dark_green","italic":true,"underlined":true,"hoverEvent":{"action":"show_text","value":[{"text":"{text:'{text:\"Hello world\",color:\"blue\"}'}"}]},"clickEvent":{"action":"copy_to_clipboard","value":"{text:'{text:\"Hello world\",color:\"blue\"}'}"}},{"text":"For color:"},{"text":"https://www.digminecraft.com/lists/color_list_pc.php","color":"dark_red","italic":true,"underlined":true,"hoverEvent":{"action":"show_text","value":[{"text":"Color List"}]},"clickEvent":{"action":"open_url","value":"https://www.digminecraft.com/lists/color_list_pc.php"}}]','{"text":"Sometimes the text will be invisible, try walking to the other side of it, if you still can't see it then you are f*cked. But if you can and you want it to be flipped use the command on the next page.Cont ->"}','[{"text":"Make sure you are within two blocks of it and no other text displays are there.Command:"},{"text":"/data merge entity @e[type=minecraft:text_display,distance=..2,limit=1] {start_interpolation:-1,interpolation_duration:20,transformation:{right_rotation:[0f,180f,0f,1f]}}","color":"dark_blue","italic":true,"underlined":true,"hoverEvent":{"action":"show_text","value":[{"text":"Rotate A Text Display Within Two Blocks 180 Degrees To The Right."}]},"clickEvent":{"action":"run_command","value":"/data merge entity @e[type=minecraft:text_display,distance=..2,limit=1] {start_interpolation:-1,interpolation_duration:20,transformation:{right_rotation:[0f,180f,0f,1f]}}"}}]','[{"text":"Removing them"},{"text":"All of them","color":"dark_blue","italic":true,"underlined":true,"hoverEvent":{"action":"show_text","value":[{"text":"/kill @e[type=text_display]"}]},"clickEvent":{"action":"run_command","value":"/kill @e[type=text_display]"}},{"text":"Within 2 blocks","color":"dark_blue","italic":true,"underlined":true,"hoverEvent":{"action":"show_text","value":[{"text":"/kill @e[type=text_display,distance=..2]"}]},"clickEvent":{"action":"run_command","value":"/kill @e[type=text_display,distance=..2]"}}]]}] 1
  }
  function plush/place{
-    say function Ran
+    #say function Ran
 
     execute if entity @e[type=minecraft:item_display,distance=..1] run {
-        say Testdel
-        kill @e[type=minecraft:item_display,distance=..1]
+        #say Testdel
+        execute as @e[type=minecraft:item_display,distance=..1] run function dynamic/killpassangers
     }
     else run {
-        function dynamic/item_display-item {item:data get entity @s}
-        tellraw @p {"entity":"@s","nbt":"Rotation","source":"entity","type":"nbt","interpret":"1b"}
+        function dynamic/item_display-item with entity @s
+        #tellraw @p {"entity":"@s","nbt":"Rotation","source":"entity","type":"nbt","interpret":"1b"}
     }
  }
 
- function test/test{
-    say Test
-    $data get entity $(ent) Tags
+function test/test{
+    $say $(SelectedItem)
  }
 
-function item_display-item{
-        $say $(item)
-        $summon item_display ~ ~1 ~ {Tags:["Placed"],item:{id:$(item),count:4}}
+function dynamic/item_display-item{
+    item modify entity @s weapon.mainhand { "function": "minecraft:set_count", "count": -1, "add": true}
+    #$summon minecraft:item_display ~ ~0.5 ~ {Tags:["Place"],shadow_radius:0.5f,transformation:{translation:[0f,0.5f,0f]},item:$(SelectedItem),Passengers:[{NoGravity:1b,Invulnerable:1,NoAI:1,id:"minecraft:shulker",CustomNameVisible:0,Silent:1,attributes:[{id:"generic.scale",base:.5f}],active_effects:[{id:invisibility,amplifier:0,duration:-1,show_particles:0b}]}]}
+    $summon minecraft:item_display ~ ~0.5 ~ {Tags:["Place"],shadow_radius:0.5f,transformation:{translation:[0f,0.5f,0f]},item:$(SelectedItem)}
+    function dynamic/rotation with entity @s
 }
-function dynamic/item_display-item/sub{
-    $say $(item)
-    $summon item_display ^ ^ ^-1 {Tags:["Placed"],item:{id:$(item),count:4}}
+function dynamic/rotation{
+    #$say $(Rotation)
+    $execute as @n[tag=Place] run function dynamic/rotation/merge {Rotation:$(Rotation)}
+}
+function dynamic/rotation/merge{
+    $data merge entity @s {transformation:{translation:[0f,0.5f,0f]},Rotation:$(Rotation),item:{count:1}}
+    data modify entity @s Rotation[1] set value 0f
+    data modify entity @s Tags set value ["Placed"]
 }
 function cleaning/item_display{
     kill @e[type=minecraft:item_display]
+}
+function dynamic/killpassangers{
+    execute on passengers run function dynamic/killpassangers
+    execute at @s run function dynamic/givedrop with entity @s
+    kill @s
+}
+function dynamic/givedrop{
+    $summon minecraft:item ~ ~ ~ {Item:$(item)}
 }
