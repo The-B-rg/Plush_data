@@ -5,12 +5,12 @@ data/berg.plushy/function/on_tick.mcfunction:64bf332372ceba81c89cf48dce4b14647eb
 data/berg.plushy/function/debug/itemdisplaybook.mcfunction:f5d1647f22df3569eab36139044794311f5f61fd
 data/berg.plushy/function/debug/blockdisplaybook.mcfunction:feb51be290c52b10662dc13056e45100713bb0e4
 data/berg.plushy/function/debug/textdisplaybook.mcfunction:3e7378b1054c27231d7a9443130d09cd1938c60a
-data/berg.plushy/function/zzz/2.mcfunction:883206f9a03a0a579bbf62ffe308936bbd07db5b
-data/berg.plushy/function/zzz/3.mcfunction:3190b6976e34ceb5b83b38c1160d2b10bfbb46b6
-data/berg.plushy/function/plush/place.mcfunction:d1e828f3b62852edf10bd27ff490ef76dfad2e81
+data/berg.plushy/function/plush/place.mcfunction:f7da09e416343aa0ab930a274c221ba3251be456
+data/berg.plushy/function/plush/pickup.mcfunction:b6dace7073df3d38761dc1b82ba019c683716dd0
 data/berg.plushy/function/test/test.mcfunction:ecdc3cbd5dc680788ba37730eca5c5af0d2bd80e
-data/berg.plushy/function/dynamic/item_display-item.mcfunction:9ba947e0e19aeddc65226ed44ccb20a7d573d730
-data/berg.plushy/function/dynamic/rotation.mcfunction:d70edf55aed2ab343b4a66836c8848044ee137b6
+data/berg.plushy/function/dynamic/item_display-item.mcfunction:d15124df698a200c8ec9a8e7ac8995c4bcb848de
+data/berg.plushy/function/plush/rotate.mcfunction:a7eca368ea38e6487b6886fa257c05d54b9d7bd1
+data/berg.plushy/function/dynamic/rotation.mcfunction:a4fee17c2a37dbaf848fbe6779e1f566763745e6
 data/berg.plushy/function/dynamic/rotation/merge.mcfunction:1010a6a0b47bc1d638c2ae613a3ef12dd2b41a2d
 data/berg.plushy/function/cleaning/item_display.mcfunction:0f9a956fea253c5caee98195ddd78b571619944d
 data/berg.plushy/function/dynamic/killpassangers.mcfunction:9e220b822fd158613559dbf81994f98567677f15

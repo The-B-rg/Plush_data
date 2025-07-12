@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "Plush",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "supplementaries:wrench"
+    },
+    {
+      "tag": "minecraft:wool"
+    }
+  ],
+  "result": {
+    "id": "supplementaries:wrench",
+    "components": {
+      "minecraft:item_name": "\"Plush Wrench\"",
+      "minecraft:hide_additional_tooltip": {},
+      "minecraft:enchantment_glint_override": false,
+      "minecraft:max_stack_size": 1,
+      "minecraft:enchantments": {
+        "levels": {
+          "berg.plushy:plush/wrench": 1
+        },
+        "show_in_tooltip": true
+      },
+      "minecraft:custom_model_data": 837900
+    }
+  }
+}

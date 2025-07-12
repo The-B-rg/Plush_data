@@ -1,0 +1,24 @@
+{
+  "criteria": {
+    "Rclick": {
+      "trigger": "minecraft:using_item",
+      "conditions": {
+        "item": {
+          "items": "supplementaries:wrench",
+          "count": 0,
+          "components": {
+            "minecraft:enchantments": {
+              "levels": {
+                "berg.plushy:plush/wrench": 1
+              }
+            },
+            "minecraft:custom_model_data": 837900
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "berg.plushy:plush/rotate"
+  }
+}

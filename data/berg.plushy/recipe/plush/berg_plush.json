@@ -7,9 +7,10 @@
   "result": {
     "id": "minecraft:totem_of_undying",
     "components": {
-      "minecraft:item_name": "\"Direwolf20\"",
-      "minecraft:custom_model_data": 837927,
+      "minecraft:item_name": "\"Spelenberg\"",
+      "minecraft:custom_model_data": 837926,
       "minecraft:enchantment_glint_override": false,
+      "minecraft:max_stack_size": 64,
       "minecraft:enchantments": {
         "levels": {
           "berg.plushy:plush/placeing": 1
