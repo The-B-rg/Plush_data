@@ -22,7 +22,6 @@
       "minecraft:item_name": "\"Citlalin\"",
       "minecraft:hide_additional_tooltip": {},
       "minecraft:enchantment_glint_override": false,
-      "minecraft:max_stack_size": 1,
       "minecraft:enchantments": {
         "levels": {
           "berg.plushy:plush/placeing": 1,
@@ -34,6 +33,9 @@
       "minecraft:lore": [
         "\"A friend from another world! \""
       ],
+      "minecraft:unbreakable": {
+        "show_in_tooltip": true
+      },
       "!minecraft:damage": {}
     }
   }
