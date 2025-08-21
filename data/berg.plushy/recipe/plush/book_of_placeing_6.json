@@ -1,7 +1,5 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "Plush",
-  "category": "misc",
   "ingredients": [
     {
       "item": "minecraft:book"
@@ -22,7 +20,7 @@
       "item": "minecraft:book"
     },
     {
-      "item": "armor_stand"
+      "item": "minecraft:armor_stand"
     }
   ],
   "result": {

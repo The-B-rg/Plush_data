@@ -7,6 +7,7 @@ data/berg.plushy/function/debug/blockdisplaybook.mcfunction:feb51be290c52b10662d
 data/berg.plushy/function/debug/textdisplaybook.mcfunction:3e7378b1054c27231d7a9443130d09cd1938c60a
 data/berg.plushy/function/plush/place.mcfunction:f7da09e416343aa0ab930a274c221ba3251be456
 data/berg.plushy/function/plush/pickup.mcfunction:b6dace7073df3d38761dc1b82ba019c683716dd0
+data/berg.plushy/function/plush/citlalin.mcfunction:d1a71c8789412d6fa6ac05e41beaedfae1efacc2
 data/berg.plushy/function/test/test.mcfunction:ecdc3cbd5dc680788ba37730eca5c5af0d2bd80e
 data/berg.plushy/function/dynamic/item_display-item.mcfunction:d15124df698a200c8ec9a8e7ac8995c4bcb848de
 data/berg.plushy/function/plush/rotate.mcfunction:a7eca368ea38e6487b6886fa257c05d54b9d7bd1
